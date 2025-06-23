@@ -171,16 +171,18 @@ h2::before {
     height: 458px;
     border-radius: 15px;
     overflow: hidden;
-
     position: relative;
     margin: 2rem 0;
     width: 100%;
+    background: #00000000;
 }
 
 .slides {
     display: flex;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
+    align-items: center;
+    background: #00000000;
 }
 
 .slide {
@@ -194,10 +196,11 @@ h2::before {
 }
 
 .slide img {
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
-    object-fit: cover;
-    max-width: none;
+    height: auto;
+    object-fit: contain;
 }
 
 .carousel-nav {
@@ -232,6 +235,7 @@ h2::before {
         width: 100%;
         height: auto;
         padding: 2rem;
+        background: linear-gradient(0deg, #1a252f, #2c3e50);
     }
 
     .right-container {
@@ -240,8 +244,8 @@ h2::before {
     }
 
     .projects-selector {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
     }
 
     .project-icon {
@@ -250,7 +254,8 @@ h2::before {
     }
 
     .slide img {
-        height: 250px;
+        height: 180px;
+        margin: 1rem;
     }
 }
 
@@ -326,4 +331,35 @@ h2::before {
     align-items: center;
     gap: 0.5rem;
     margin-top: 1rem;
+}
+
+.typewriter{
+    display: flex;
+    padding: 0 0 -500px 0;
+}
+
+.typewriter h1{
+
+    font-size: 3.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 10px solid;
+    animation: typing 3s steps(22) forwards;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes typing {
+    from{
+        width: 0;
+    }
+
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }    
 }
