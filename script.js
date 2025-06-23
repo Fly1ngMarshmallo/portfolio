@@ -52,11 +52,12 @@ carouselInterval = setInterval(() => {
     updateCarousel();
 }, 5000);
 
+        // Global Scrolling
 const rightContainer = document.querySelector('.right-container');
 document.addEventListener('wheel', function(e) {
     if (!(rightContainer.scrollTop === 0 && e.deltaY < 0) && 
         !(rightContainer.scrollHeight - rightContainer.clientHeight <= rightContainer.scrollTop + 1 && e.deltaY > 0)) {
-        e.preventDefault();
-    }
-    rightContainer.scrollTop += e.deltaY;
-}, { passive: false });
+            e.preventDefault();
+        }
+        rightContainer.scrollTop += e.deltaY;
+    }, { passive: false });
